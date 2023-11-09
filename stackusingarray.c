@@ -3,6 +3,7 @@ int stack[100],choice,n,top,x,i;
 void push(void);
 void pop(void);
 void display(void);
+void peek(void);
 int main()
 {
     top=-1;
@@ -10,7 +11,7 @@ int main()
     scanf("%d",&n);
     printf("\n\t STACK OPERATIONS USING ARRAY");
     printf("\n\t--------------------------------");
-    printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.DISPLAY\n\t 4.EXIT");
+    printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.PEEK\n\t 5.EXIT");
     do
     {
         printf("\n Enter the Choice:");
@@ -29,10 +30,15 @@ int main()
             }
             case 3:
             {
+                peek();
+                break;
+            }
+             case 4:
+            {
                 display();
                 break;
             }
-            case 4:
+            case 5:
             {
                 printf("\n\t EXIT POINT ");
                 break;
@@ -72,6 +78,16 @@ void pop()
     {
         printf("\n\t The popped elements is %d",stack[top]);
         top--;
+    }
+}
+void peek()
+{
+    if(top<=-1)
+    {
+        printf("\n\t Stack is under flow");
+    }
+    else{
+    printf("\n\t The element at top is %d",stack[top]);
     }
 }
 void display()
